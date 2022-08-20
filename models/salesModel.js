@@ -15,6 +15,21 @@ const salesModel = {
     `;
     await connection.query(query, [id, productId, quantity]);
   },
+  async get() {
+    const query = `
+      SELECT * FROM StoreManager.sales_products ORDER BY sale_id
+    `;
+    const [result] = await connection.query(query);
+    return result;
+  },
+  async getId(id) {
+    const query = `
+      SELECT * FROM StoreManager.sales_products
+      WHERE sale_id = ?
+    `;
+    const [result] = await connection.query(query, [id]);
+    return result;
+  },
 };
 
 module.exports = salesModel;

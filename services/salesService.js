@@ -23,6 +23,14 @@ const salesService = {
       sales.map((item) => salesModel.create(id, item)),
     );
   },
+  async get() {
+    const result = await salesModel.get();
+    return result;
+  },
+  async getId({ id }) {
+    const result = await salesModel.getId(id);
+    return result;
+  },
 };
 
 module.exports = salesService;
