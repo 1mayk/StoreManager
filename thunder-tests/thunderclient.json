@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "651f36a0-18d8-45bb-b2a9-5bdc8fda2c99",
+    "colId": "b37abfc3-68bd-4d5e-8742-18cd6b2e71e5",
+    "containerId": "",
+    "name": "getAll",
+    "url": "localhost:3000/products/",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-11T17:59:28.414Z",
+    "modified": "2022-08-20T02:17:01.027Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e0bbdb98-b9fc-4baa-a77e-1e4c0067024e",
+    "colId": "b37abfc3-68bd-4d5e-8742-18cd6b2e71e5",
+    "containerId": "",
+    "name": "create",
+    "url": "localhost:3000/products",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-14T14:38:36.670Z",
+    "modified": "2022-08-14T22:17:38.354Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"mk\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "52f11f80-248f-42c4-9a60-8639f00e4b80",
+    "colId": "81a31698-af8d-49f9-b1fd-0c0482f31406",
+    "containerId": "",
+    "name": "getAll",
+    "url": "localhost:3000/sales/",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-18T14:52:12.490Z",
+    "modified": "2022-08-18T14:52:42.873Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a35e4ddf-0f95-4be1-b4f8-e9d607c5eb54",
+    "colId": "81a31698-af8d-49f9-b1fd-0c0482f31406",
+    "containerId": "",
+    "name": "create",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-18T14:52:12.492Z",
+    "modified": "2022-08-19T18:33:36.486Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  [\n    {\n      \"productId\": 2,\n      \"quantity\": 7\n    },\n    {\n      \"productId\": 7,\n      \"quantity\":10\n    }\n  ]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d8e3b413-424a-4d49-8ce5-b77e06a5b3b3",
+    "colId": "b37abfc3-68bd-4d5e-8742-18cd6b2e71e5",
+    "containerId": "",
+    "name": "update",
+    "url": "localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 30000,
+    "created": "2022-08-20T02:11:28.154Z",
+    "modified": "2022-08-20T02:18:19.741Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"teste 2\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
