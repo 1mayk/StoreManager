@@ -30,6 +30,21 @@ const salesModel = {
     const [result] = await connection.query(query, [id]);
     return result;
   },
+  async checkSaleExists(id) {
+    const query = `
+      SELECT 1 FROM StoreManager.sales
+      WHERE id = ?
+    `;
+    const [[result]] = await connection.query(query, [id]);
+    return !!result;
+  },
+  async delete(id) {
+    const query = `
+      DELETE FROM StoreManager.sales
+      WHERE id = ?
+    `;
+    await connection.query(query, [id]);
+  },
 };
 
 module.exports = salesModel;

@@ -2,6 +2,7 @@ const salesModel = require('../models/salesModel');
 const productsService = require('./productsService');
 const runSchema = require('../middlewares/runSchema');
 const schemas = require('../middlewares/schemas');
+const SaleNotFound = require('../errors/SaleNotFound');
 
 const salesService = {
   validateBodySchema: runSchema(schemas.bodySchema),
@@ -13,6 +14,10 @@ const salesService = {
     await Promise.all(
       salesReq.map((sale) => this.validateBodySchema(sale)),
     );
+  },
+  async checkSaleExists(id) {
+    const result = await salesModel.checkSaleExists(id);
+    if (!result) throw new SaleNotFound('Sale Not Found!');
   },
   async createSaleId() {
     const id = await salesModel.createSaleId();
@@ -30,6 +35,9 @@ const salesService = {
   async getId({ id }) {
     const result = await salesModel.getId(id);
     return result;
+  },
+  async delete(id) {
+    await salesModel.delete(id);
   },
 };
 

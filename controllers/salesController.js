@@ -1,3 +1,4 @@
+const productsService = require('../services/productsService');
 const salesService = require('../services/salesService');
 
 const salesController = {
@@ -16,6 +17,12 @@ const salesController = {
   async getId(req, res) {
     const data = await salesService.getId(req.params);
     res.status(200).json(data);
+  },
+  async delete(req, res) {
+    const { id } = await productsService.validateId(req.params);
+    await salesService.checkSaleExists(id);
+    await salesService.delete(id);
+    res.sendStatus(204);
   },
 };
 
