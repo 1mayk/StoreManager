@@ -13,8 +13,4 @@ app.use('/sales', salesRoute);
 
 app.use(errorHandler);
 
-app.get('/', (_request, response) => {
-  response.send();
-});
-
 module.exports = app;
