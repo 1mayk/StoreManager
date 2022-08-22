@@ -1,0 +1,45 @@
+{
+  "definition": {
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Store Manager API",
+      "description":
+        "API simples para gerenciamento de produtos e vendas! Developed by 1mayk",
+      "version": "1.0",
+      "contact": {
+        "name": "Maycon Oliveira",
+        "email": "maycon.lrgo@gmail.com",
+        "url": "https://github.com/1mayk"
+      }
+    },
+    "servers": [{
+      "url": "http://localhost:3000",
+      "description": "Servidor local"
+    }] 
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "description": "Listagem de todos os produtos",
+        "tags": ["Products"]
+      }
+    }
+  },
+  "apis": ["./src/routes/userRoute"],
+  "components": {
+    "schemas": {
+      "Products": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
